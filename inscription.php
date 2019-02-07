@@ -9,25 +9,25 @@ include "header.php"
           <div class="card-body">
             <h5 class="card-title text-center">Inscrivez-vous</h5>
             <hr class="my-4">
-            <form class="form-signin">
+            <form class="form-signin" action="inscription-form.php" method="post" enctype="multipart/form-data" >
 
               <div class="form-label-group">
                 <label for="inputEmail">Adresse e-mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus> 
+                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Adresse e-mail" required autofocus> 
               </div>
 
               <div class="form-label-group">
                 <label for="inputPassword">Mot de passe</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Mot de passe" required>
               </div>
 
               <div class="form-label-group">
                 <label for="inputPasswordConfirm">Confirmez le mot de passe</label>
-                <input type="password" id="inputPasswordConfirm" class="form-control" placeholder="Confirmez le mot de passe" required>
+                <input type="password" id="inputPasswordConfirm" name="password-repeat" class="form-control" placeholder="Confirmez le mot de passe" required>
               </div>
               <hr class="my-4">
               
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">S'inscrire</button>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" name="inscription" type="submit">S'inscrire</button>
                 <div class="text-center">
                   <a class="small" href="connexion.php">Vous avez déjà un compte? Connectez-vous ici</a>
                 </div>

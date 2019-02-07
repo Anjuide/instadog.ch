@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">                     
     <!-- CSS PERSONNALISÉS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
     <title>
       <?php 
         if(isset($title) && !empty($title)) { 
@@ -23,7 +24,7 @@
 </head>
 <body>
 <header class="container-fluid">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">InstaDog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -44,7 +45,7 @@
         <a class="nav-link" href="#">Articles</a>
       </li> -->
       <li class="nav-item">
-        <a class="nav-link" href="ajouterUnChien.php">Ajouter un compagnon</a>
+        <a class="nav-link" href="ajouter-un-chien.php">Ajouter un compagnon</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

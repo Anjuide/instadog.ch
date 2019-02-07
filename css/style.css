@@ -4,8 +4,8 @@
 }
 
 body {
-  background: #d4d9dd;
-  background: linear-gradient(to right, rgb(204, 207, 212), rgb(217, 229, 236));
+  background: #ffffff;
+  /* background: linear-gradient(to right, rgb(204, 207, 212), rgb(217, 229, 236)); */
 }
 
 .card-signin {

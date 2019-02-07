@@ -5,38 +5,36 @@ include "header.php"
 
 
 <div class="container">
-     <div class="row">
+    <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Ajouter Un Article</h5>
-                    <form class="form-group">
-
+                    <form class="form-group" action="ajouter-un-article-form.php" method="POST">
+                        <!-- TITRE DE L'ARTICLE -->
                         <div class="input-group input-group-lg inp-articl">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-lg">Le Titre</span>
+                                <span class="input-group-text" id="inputGroup-sizing-lg">Titre</span>
                             </div>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                            <input type="text" class="form-control" name="title" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" required autofocus>
                         </div>
-             
-                        <div class="card" style="width: 24rem; col-lg-3; margin:auto">
-                            <img src="images/D5.jpeg" class="card-img-top" alt="...">
+                        <!-- PHOTO DE L'ARTICLE -->
+                        <div class="card">
+                            <input type="file" name="picture" id="uploadPicture" required>
                         </div>
+                        <!-- DESCRIPTION DE L'ARTICLE -->
                         <div class="form-group txtara">
-                            <label for="exampleFormControlTextarea1">Artile</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                            <label for="exampleFormControlTextarea1">Description</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="5" required></textarea>
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Valider</button>
-                </form>
+                        <!-- VALIDER L'ARTICLE -->
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" name="titre" type="submit"> Valider</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
 
 <?php 
 include "footer.php"

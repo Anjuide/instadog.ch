@@ -9,22 +9,22 @@ include "header.php"
           <div class="card-body">
             <h5 class="card-title text-center">Connexion</h5>
             <hr class="my-4">
-            <form class="form-signin">
+            <form class="form-signin" action="connexion-form.php" method="post" enctype="multipart/form-data" >
               <div class="form-label-group">
                 <label for="inputEmail">Adresse e-mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Adresse e-mail" required autofocus> 
+                <input type="email" id="inputEmail"  name="email" class="form-control" placeholder="Adresse e-mail" required autofocus> 
               </div>
 
               <div class="form-label-group">
                 <label for="inputPassword">Mot de passe</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Mot de passe" required>
               </div>
               <hr class="my-4">
               <!-- <div class="custom-control custom-checkbox mb-3">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Se souvenir de moi</label>
               </div> -->
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Connexion</button>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" name="connexion" type="submit">Connexion</button>
               <div class="text-center">
                   <a class="small" href="#">Mot de passe oublié?</a>
               </div>

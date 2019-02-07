@@ -15,7 +15,7 @@ include "header.php"
               </div>
               <div class="form-label-group">
                 <label for="inputNom">Nom</label>
-                <input type="email" id="inputNom" class="form-control" placeholder="Nom" required> 
+                <input type="text" id="inputNom" class="form-control" placeholder="Nom" required> 
               </div>
               <div class="form-label-group">
                 <label for="inputPays">Pays</label>
@@ -43,7 +43,7 @@ include "header.php"
               </div>
               <div class="form-label-group">
                 <label for="inputPasswordNewConfirm">Confirmez le nouveau mot de passe</label>
-                <input type="password" id="inputPasswordNewConfirm" class="form-control" placeholder="Confirmez le mot de passe" required>
+                <input type="password" id="inputPasswordNewConfirm" class="form-control" placeholder="Confirmez le mot de passe">
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Modifier le mot de passe</button>
               

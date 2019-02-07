@@ -49,14 +49,32 @@ echo "</br>";
 /* ------------------------------------------------------------------------------------------------------*/
 /* ----------------------------------------- USERDOG --------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------*/
-$email = "test@fonction.ch";
-$pwd = "test1234"; // HASH PASSWORD
-$lastConnectionDate = "2019-01-08"; // GETDATE();
-$lastName = "Test";
-$firstName = "Fonction";
-$country = "User";
-$city = "Dog";
+ $email = "test@fonction.ch";
+ $pwd = "test1234"; // HASH PASSWORD
+// $lastConnectionDate = "2019-01-08"; // GETDATE();
+// $lastName = "Test";
+// $firstName = "Fonction";
+// $country = "User";
+// $city = "Dog";
 
-$insertUserDog = $appli->setUserDog ($email, $pwd, $lastConnectionDate, $lastName, $firstName, $country, $city);
-var_dump($insertUserDog);
+ $insertUserDog = $appli->setUserDog ($email, $pwd, $lastConnectionDate, $lastName, $firstName, $country, $city);
+ var_dump($insertUserDog);
+// $_POSTpassword= "ange1504";
+// $passwordBD = password_hash($_POSTpassword,PASSWORD_DEFAULT);
+// echo $passwordBD;
+// echo"<br>";
+// $password = "ange1504";
+// if (password_verify ( $password ,  $passwordBD )){
+//     echo "Bon mot de passe";
+// }else{
+//     echo "Mauvais mot de passe";
+// }
+
+$checkEmail = $appli->getUsersByEmail("ange.gnamba@gmail.com");
+if($appli->getUsersByEmail("angegnamba@gmail.com") == false){
+    echo "L'utilisateur n'est pas dans la base de données";
+}else{
+    echo"Bon utilisateur";
+}
+
 ?>

@@ -70,6 +70,24 @@ class Connexion
         // Je retourne un objet Profile
         return $userProfile;
     }
+
+    public function getUsersByEmail($email)
+    {
+        // Je prépare la requête 
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT * 
+            FROM UserDog
+            WHERE email = :email"
+        );
+        // J'execute la requête en passant la valeur
+        $requete_prepare->execute(
+            array('email' => $email)
+        );
+        // Je récupère le résultat de la requête en mappant avec la classe Profile
+        $userProfile = $requete_prepare->fetchObject("Profile");
+        // Je retourne un objet Profile
+        return $userProfile;
+    }
     /* ------------------------------------------------------------------------------------------------------*/
     /* ----------------------------------------------DOG(S)------------------------------------------------- */
     /* ------------------------------------------------------------------------------------------------------*/

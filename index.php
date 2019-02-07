@@ -12,7 +12,14 @@ include "header.php";
 
 ?>
 <!-- CONTAINER DU BODY -->
-<div class="container">
+<div class="container bg-white text-dark">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-2 text-center">InstaDog</h1>
+            <h2 class="text-center">Découvrez la magie des moments de chien de tous les jours.</h2>
+        </div>
+    </div>
+
     <div class="row">
         <?php 
         foreach ($dogs as $dog) {
