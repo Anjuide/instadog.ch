@@ -8,6 +8,7 @@ $id = $_GET['id'];
 // APPEL DES FONCTIONS DE MON OBJET CONNEXION
 $dogProfile = $appli->getDogProfile($id);
 $dogId = $dogProfile->getId();
+$owner = $appli->getUserProfile($dogProfile->getUserId());
 $listeArticles = $appli->getDogArticles($dogId);
 // Titre de la page
 $title = 'Profil de ' . $dogProfile->getNickname() . '';
@@ -41,7 +42,7 @@ include "header.php";
             <ul class="myleft" >
                 <li><?php echo $dogProfile->getBirthday(); ?></li>
                 <li><a href="#"><?php echo $dogProfile->getListRaces(); ?></a></li>	
-                <li><a href="#">Genève, CH</a></li>
+                <li><a href="#"><?php echo $owner->getCity(); ?></a></li>
             </ul>
         </div>
     </div>
