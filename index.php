@@ -4,12 +4,18 @@ require("classes/Connexion.php");
 // DEMARRER UNE NOUVEL OBJET DE CONNEXION
 $appli = new Connexion();
 // APPEL DES FONCTIONS DE MON OBJET CONNEXION
-$dogs = $appli->getDogs();
+$keywords = "";
+if (isset($_POST["keywords"])){
+    $keywords = $_POST["keywords"];
+}
+$listDogs = $appli->getDogsByKeywords($keywords);
+
 // Titre de la page
 $title = "Bienvenue sur Instadog";
 // INCLURE LE HEADER
 include "header.php";
-
+// Récupérer les paramètres passés en URL
+// $nickname = $_GET["nickame"];
 ?>
 <!-- CONTAINER DU BODY -->
 <div class="container bg-white text-dark">
@@ -22,7 +28,7 @@ include "header.php";
 
     <div class="row">
         <?php 
-        foreach ($dogs as $dog) {
+        foreach ($listDogs as $dog) {
             // IMAGE DU CHIEN ET SON NICKNAME
             echo '<div class="card col-lg-3 col-md-4" style="width: 17rem; margin:auto; padding:0;">';
                 echo "<a href='profil-du-chien.php?id=" . $dog->getId() . "'>";
