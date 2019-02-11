@@ -25,7 +25,7 @@
 <body>
 <header class="container-fluid">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">InstaDog</a>
+  <a class="navbar-brand" href="index.php">InstaDog</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -41,15 +41,15 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Races</a>
       </li>
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="#">Articles</a>
-      </li> -->
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="ajouter-un-chien.php">Ajouter un compagnon</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Rechercher par race, nom ou ville" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" action="index.php" method="post" enctype="multipart/form-data">
+      <input class="form-control mr-sm-2" type="search" name ="keywords" placeholder="Rechercher par race, nom ou ville" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
     </form>
     <ul class="navbar-nav mr-auto">
