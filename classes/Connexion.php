@@ -139,8 +139,8 @@ class Connexion
         // Je récupère le résultat de la requête en mappant avec la classe Dog
         $listUserDogs = $requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Dog');
         // Je retourne une liste d'objets Dog
-        $test = new Profile();
-        $test->setListDogs($listUserDogs);
+        // $test = new Profile();
+        // $test->setListDogs($listUserDogs);
         return $listUserDogs;
     }
     /* ------------------------------------------------------------------------------------------------------*/
@@ -325,6 +325,26 @@ class Connexion
                     'city' => $city
             )
         );
+    }
+    /* ------------------------------------------------------------------------------------------------------*/
+    /* -------------------- FONCTION RECHERCHER UN CHIEN PAR NOM OU RACE ----------------------------------- */
+    /* ------------------------------------------------------------------------------------------------------*/
+    public function getDogsByKeywords($keywords)
+    {
+        // Je prépare la requête 
+        $requete_prepare = $this->connexion->prepare(
+            "SELECT * 
+            FROM Dog
+            WHERE nickname LIKE :keywords"
+        );
+        // J'execute la requête en passant la valeur
+        $requete_prepare->execute(
+            array('keywords' => "%$keywords%")
+        );
+        // Je récupère le résultat de la requête sous forme d'objet en mappant avec la classe Dog
+        $listDogs = $requete_prepare->fetchAll(PDO::FETCH_CLASS, 'Dog');
+        // Je retourne un objet Comment
+        return $listDogs;
     }
 }
 
