@@ -10,7 +10,7 @@ include "header.php"
             <div class="card card-signin my-5">
                 <div class="card-body">
                     <h5 class="card-title text-center">Ajouter Un Article</h5>
-                    <form class="form-group" action="ajouter-un-article-form.php" method="POST">
+                    <form class="form-group" action="ajouter-un-article-form.php" method="POST" enctype="multipart/form-data" >
                         <!-- TITRE DE L'ARTICLE -->
                         <div class="input-group input-group-lg inp-articl">
                             <div class="input-group-prepend">
@@ -20,7 +20,8 @@ include "header.php"
                         </div>
                         <!-- PHOTO DE L'ARTICLE -->
                         <div class="card">
-                            <input type="file" name="picture" id="uploadPicture" required>
+                            <label for="inputPays">Téléverser la photo de votre chien</label>
+                            <input type="file" id="inputPhoto" name ="picture" class="form-control" placeholder="Téléverser la photo de votre chien" required> 
                         </div>
                         <!-- DESCRIPTION DE L'ARTICLE -->
                         <div class="form-group txtara">
