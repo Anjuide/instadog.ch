@@ -54,8 +54,10 @@
             } elseif ($extensions_erreur) {
                 echo 'Extension invalide <br> Veuillez choisir une extension de type "jpg", "jpeg", "gif" ou "png" ';
             } else {
+                $today = date('Ymd His');
+                $fileName = $today . $_FILES['userdog']['name'];
                 // DEPLACER LE FICHIER TELECHARGÉ DANS LE SERVEUR
-                move_uploaded_file($_FILES['userdog']['tmp_name'], 'upload/'.$_FILES['userdog']['name']);
+                move_uploaded_file($_FILES['userdog']['tmp_name'], 'upload/'.$fileName);
                 echo "Bravo! L'image a été téléchargé!";
             }
                    
