@@ -8,6 +8,7 @@
     <meta name="description" content="Instadog - Racontez l'histoire de votre chien">
     <!-- CHARGEMENT PAR CDN de Bootstrap 4.2.1 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">                     
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <!-- CSS PERSONNALISÉS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
@@ -36,13 +37,10 @@
         <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Compagnons</a>
+        <a class="nav-link" href="races.php">Races</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Races</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Articles</a>
+        <a class="nav-link" href="articles.php">Articles</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="ajouter-un-chien.php">Ajouter un compagnon</a>
@@ -50,15 +48,36 @@
     </ul>
     <form class="form-inline my-2 my-lg-0" action="index.php" method="post" enctype="multipart/form-data">
       <input class="form-control mr-sm-2" type="search" name ="keywords" placeholder="Rechercher par race, nom ou ville" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+      <!-- <button type="submit"><i class="btn btn-outline-success my-2 my-sm-0 fa fa-search"></i></button> -->
+      <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button> -->
     </form>
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="connexion.php">Se connecter</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="inscription.php">S'inscrire</a>
-      </li>
+    <ul class="navbar-nav ml-auto">
+        <?php if (isset($_SESSION['email']) && isset($_SESSION['pwd'])){
+          echo '<li class="nav-item dropdown">';
+            echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mon compte</a>';
+            echo '<div class="dropdown-menu menu-deroulant" aria-labelledby="navbarDropdown">';
+            echo '<a class="dropdown-item" href="#">Ton profil</a>
+            <a class="dropdown-item" href="#">Tes chiens</a>
+            <a class="dropdown-item" href="#">Tes articles</a>
+            <div class="dropdown-divider"></div>';
+            // MET LE BOUTON DECONNEXION
+            echo '<form class="form-inline my-2 my-lg-0" action="deconnexion.php" method="post" enctype="multipart/form-data">';
+              echo '<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Déconnexion</button>';
+            echo '</form>';
+            echo '</div>';
+          echo '</li>';
+        }else{
+          // MET LES BOUTONS SE CONNECTER ET SINSCRIRE
+          echo '<li class="nav-item mr-1">';
+            echo '<a class="nav-link btn bg-success" href="connexion.php">Se connecter</a>';
+          echo '</li>';
+          echo '<li class="nav-item">';
+            echo '<a class="nav-link btn btn-outline-success" href="inscription.php">Sinscrire</a>';
+          echo '</li>';
+    
+          }
+        ?>
+      
     </ul>
   </div>
 </nav>
