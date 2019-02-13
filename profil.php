@@ -27,7 +27,7 @@ include "header.php"
               </div>
 
 
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Enregistrer</button>
+              <button class="btn btn-lg btn-success btn-block text-uppercase" type="submit">Enregistrer</button>
               <hr class="my-4">
               <div class="form-label-group">
                 <label for="inputEmail disabled">ange.gnamba@gmail.com</label>
