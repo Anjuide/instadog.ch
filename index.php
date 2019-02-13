@@ -1,6 +1,8 @@
 <?php 
 // SE CONNECTER A LA BASE DE DONNEES
 require("classes/Connexion.php");
+// ON DEMARRE LA SESSION AVANT D'ECRIRE DU CODE HTML
+session_start();
 // DEMARRER UNE NOUVEL OBJET DE CONNEXION
 $appli = new Connexion();
 // APPEL DES FONCTIONS DE MON OBJET CONNEXION
