@@ -21,6 +21,10 @@ if (isset($_POST['inscription'])) {
                 $country = null;
                 $city = null;
                 $appli->setUserDog($_POST['email'], $passwordHash, $lastConnectionDate, $lastName, $firstName, $country, $city);
+                // On crée quelques variables de session dans $_SESSION
+                session_start();
+                $_SESSION['email'] = $_POST['email'];
+                $_SESSION['pwd'] = $_POST['password'];
                 header("Location: profil.php");
             } else {
                 echo "<span>Ce compte existe déjà! Veuillez-vous connecter!</span><br/>";
