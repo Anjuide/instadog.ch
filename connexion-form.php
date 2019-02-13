@@ -11,6 +11,13 @@ if (isset($_POST['connexion'])) {
         // SI L'UTILISATEUR N'EST PAS INSCRIT OU QUE LE MOT DE PASSE EST FAUX
         if (($appli->getUsersByEmail($_POST['email']) !== false) ) {
            if (password_verify($_POST['password'], $userProfile->getPwd())) {
+                // On crée quelques variables de session dans $_SESSION
+                session_start();
+                $_SESSION['id'] = $userProfile->getId();
+                $_SESSION['email'] = $userProfile->getEmail();
+                $_SESSION['lastName'] = $userProfile->getLastName();
+                $_SESSION['pwd'] = $userProfile->getPwd();
+                // On redirige l'utilisateur sur la page d'accueil
                 header("Location: index.php");
            }
            else {
