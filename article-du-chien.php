@@ -3,7 +3,7 @@
 require("classes/Connexion.php");
 // DEMARRER UNE NOUVEL OBJET DE CONNEXION
 $appli = new Connexion();
-// RECUPERER L'ID PASSÉ EN PARAMETRE
+// RECUPERER L'ID DU CHIEN PASSÉ EN PARAMETRE
 $id = $_GET['id'];
 // APPEL DES FONCTIONS DE MON OBJET CONNEXION
 $article = $appli->getArticleDetails($id);
@@ -61,6 +61,7 @@ include "header.php";
 						</div>
 						<form action="article-du-chien-form.php" method="post">
 							<p><textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea></p>
+							<input type="hidden" name="idArticle" value="<?php echo $articleId ?>">
 							<button class="btn btn-lg btn-primary btn-block text-uppercase" name="commenter" type="submit">Valider</button>
 						</form>
 						
